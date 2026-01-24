@@ -128,47 +128,47 @@ SandboxVars = {
     -- 6 = 0-5 Years
     AlarmDecay = 2,
     -- How long after the default start date (July 9, 1993) that plumbing fixtures (eg. sinks) stop being infinite sources of water. Min: -1 Max: 2147483647 Default: 14
-    WaterShutModifier = 14,
+    WaterShutModifier = 21,
     -- How long after the default start date (July 9, 1993) that the world's electricity turns off for good. Min: -1 Max: 2147483647 Default: 14
-    ElecShutModifier = 14,
+    ElecShutModifier = 21,
     -- How long alarm batteries can last for after the power shuts off. Min: -1 Max: 2147483647 Default: 14
-    AlarmDecayModifier = 14,
+    AlarmDecayModifier = 21,
     -- Any food that can rot or spoil. Min: 0.00 Max: 4.00 Default: 0.60
-    FoodLootNew = 4.0,
+    FoodLootNew = 2.0,
     -- All items that can be read, includes fliers Min: 0.00 Max: 4.00 Default: 0.60
-    LiteratureLootNew = 4.0,
+    LiteratureLootNew = 3.0,
     -- Medicine, bandages and first aid tools. Min: 0.00 Max: 4.00 Default: 0.60
-    MedicalLootNew = 4.0,
+    MedicalLootNew = 2.0,
     -- Fishing Rods, Tents, camping gear etc. Min: 0.00 Max: 4.00 Default: 0.60
-    SurvivalGearsLootNew = 4.0,
+    SurvivalGearsLootNew = 2.0,
     -- Canned and dried food, beverages. Min: 0.00 Max: 4.00 Default: 0.60
     CannedFoodLootNew = 4.0,
     -- Weapons that are not tools in other categories. Min: 0.00 Max: 4.00 Default: 0.60
-    WeaponLootNew = 4.0,
+    WeaponLootNew = 3.0,
     -- Also includes weapon attachments. Min: 0.00 Max: 4.00 Default: 0.60
-    RangedWeaponLootNew = 4.0,
+    RangedWeaponLootNew = 3.0,
     -- Loose ammo, boxes and magazines. Min: 0.00 Max: 4.00 Default: 0.60
     AmmoLootNew = 4.0,
     -- Vehicle parts and the tools needed to install them. Min: 0.00 Max: 4.00 Default: 0.60
-    MechanicsLootNew = 4.0,
+    MechanicsLootNew = 3.0,
     -- Everything else. Also affects foraging for all items in Town/Road zones. Min: 0.00 Max: 4.00 Default: 0.60
-    OtherLootNew = 0.6,
+    OtherLootNew = 1.0,
     -- All wearable items that are not containers. Min: 0.00 Max: 4.00 Default: 0.60
-    ClothingLootNew = 0.6,
+    ClothingLootNew = 2.0,
     -- Backpacks and other wearable/equippable containers, eg. cases. Min: 0.00 Max: 4.00 Default: 0.60
-    ContainerLootNew = 4.0,
+    ContainerLootNew = 3.0,
     -- Keys for buildings/cars, key rings, and locks. Min: 0.00 Max: 4.00 Default: 0.60
-    KeyLootNew = 4.0,
+    KeyLootNew = 2.0,
     -- VHS tapes and CDs. Min: 0.00 Max: 4.00 Default: 0.60
-    MediaLootNew = 0.6,
+    MediaLootNew = 1.0,
     -- Spiffo items, plushies, and other collectible keepsake items eg. Photos. Min: 0.00 Max: 4.00 Default: 0.60
     MementoLootNew = 0.6,
     -- Items that are used in cooking, including those (eg. knives) which can be weapons. Does not include food. Includes both usable and unusable items. Min: 0.00 Max: 4.00 Default: 0.60
-    CookwareLootNew = 4.0,
+    CookwareLootNew = 3.0,
     -- Items and weapons that are used as ingredients for crafting or building. This is a general category that does not include items belonging to other categories such as Cookware or Medical. Does not include Tools. Min: 0.00 Max: 4.00 Default: 0.60
-    MaterialLootNew = 4.0,
+    MaterialLootNew = 3.0,
     -- Items and weapons which are used in both animal and plant agriculture, such as Seeds, Trowels, or Shovels. Min: 0.00 Max: 4.00 Default: 0.60
-    FarmingLootNew = 4.0,
+    FarmingLootNew = 3.0,
     -- Items and weapons which are Tools but don't fit in other categories such as Mechanics or Farming. Min: 0.00 Max: 4.00 Default: 0.60
     ToolLootNew = 4.0,
     -- <BHC> [!] It is recommended that you DO NOT change this. [!] <RGB:1,1,1>   Can be used to adjust the number of rolls made on loot tables when spawning loot. Will not reduce the number of rolls below 1. Can negatively affect performance if set to high values. It is highly recommended that this not be changed. Min: 0.10 Max: 100.00 Default: 1.00
@@ -273,7 +273,7 @@ SandboxVars = {
     -- 3 = Normal
     -- 4 = Slow
     -- 5 = Very Slow
-    FoodRotSpeed = 3,
+    FoodRotSpeed = 2,
     -- How effective a fridge will be at keeping food fresh for longer. Default = Normal
     -- 1 = Very Low
     -- 2 = Low
@@ -281,13 +281,13 @@ SandboxVars = {
     -- 4 = High
     -- 5 = Very High
     -- 6 = No decay
-    FridgeFactor = 3,
+    FridgeFactor = 4,
     -- When greater than 0, loot will not respawn in zones that have been visited within this number of in-game hours. Min: 0 Max: 2147483647 Default: 0
-    SeenHoursPreventLootRespawn = 731,
+    SeenHoursPreventLootRespawn = 73,
     -- When greater than 0, after X hours, all containers in towns and trailer parks in the world will respawn loot. To spawn loot a container must have been looted at least once. Loot respawn is not impacted by visibility or subsequent looting. Min: 0 Max: 2147483647 Default: 0
-    HoursForLootRespawn = 731,
+    HoursForLootRespawn = 73,
     -- Containers with a number of items greater, or equal to, this setting will not respawn. Min: 0 Max: 2147483647 Default: 5
-    MaxItemsForLootRespawn = 6,
+    MaxItemsForLootRespawn = 20,
     -- Items will not respawn in buildings that players have barricaded or built in.
     ConstructionPreventsLootRespawn = true,
     -- A comma-separated list of item types that will be removed after HoursForWorldItemRemoval hours.
@@ -419,7 +419,7 @@ SandboxVars = {
     -- 2 = Slow
     -- 3 = Normal
     -- 4 = Fast
-    ClothingDegradation = 2,
+    ClothingDegradation = 3,
     -- If fires spread when started.
     FireSpread = true,
     -- Number of in-game days before rotten food is removed from the map.  -1 means rotten food is never removed. Min: -1 Max: 2147483647 Default: -1
