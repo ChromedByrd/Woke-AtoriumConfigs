@@ -21,20 +21,6 @@ jobs:
           echo "Testing TCP connectivity to ${{ secrets.GPORTAL_FTP_HOST }}:34831"
           nc -vz -w 10 ${{ secrets.GPORTAL_FTP_HOST }} 34831
 
-      - name: Quick SFTP connectivity test
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y sshpass openssh-client
-          sshpass -p "${{ secrets.GPORTAL_FTP_PASS }}" \
-            ssh -p 34831 \
-            -o StrictHostKeyChecking=no \
-            -o UserKnownHostsFile=/dev/null \
-            -o ConnectTimeout=20 \
-            -o ServerAliveInterval=15 \
-            -o ServerAliveCountMax=3 \
-            ${{ secrets.GPORTAL_FTP_USER }}@${{ secrets.GPORTAL_FTP_HOST }} \
-            "echo connected && pwd && ls -la /Server && echo '---' && ls -la /Server || true"
-
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
