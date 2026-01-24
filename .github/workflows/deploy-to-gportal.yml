@@ -13,16 +13,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+      - name: SFTP Deploy
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
         with:
-          server: ${{ secrets.GPORTAL_FTP_HOST }}
           username: ${{ secrets.GPORTAL_FTP_USER }}
-          password: ${{ secrets.GPORTAL_FTP_PASS }}
-          protocol: ftps
+          server: ${{ secrets.GPORTAL_FTP_HOST }}
           port: 34831
-          local-dir: ./to-upload/
-          server-dir: /Server/
+          password: ${{ secrets.GPORTAL_FTP_PASS }}
+          local_path: "./to-upload/*"
+          remote_path: "/Server/"
           dangerous-clean-slate: false
           exclude: |
             **/.git*
