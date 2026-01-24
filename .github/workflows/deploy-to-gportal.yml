@@ -35,15 +35,23 @@ jobs:
             ${{ secrets.GPORTAL_FTP_USER }}@${{ secrets.GPORTAL_FTP_HOST }} \
             "echo connected && pwd && ls -la /Server && echo '---' && ls -la /Server || true"
 
-      - name: SFTP Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.6
+      - name: FTP Deploy
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
-          username: ${{ secrets.GPORTAL_FTP_USER }}
           server: ${{ secrets.GPORTAL_FTP_HOST }}
-          port: 34831
+          username: ${{ secrets.GPORTAL_FTP_USER }}
           password: ${{ secrets.GPORTAL_FTP_PASS }}
-          local_path: "./to-upload/*"
-          remote_path: "/Server/"
-          delete_remote_files: "false"
-          sftp_only: "true"
-          sftpArgs: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=30 -o ServerAliveInterval=15 -o ServerAliveCountMax=3"
+          port: 34831
+          protocol: ftp
+          local-dir: ./to-upload/
+          server-dir: /Server/
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*
+            **/.github/**
+            **/README*
+            **/*.ps1
+            **/Saves/**
+            **/Logs/**
+            **/db/**
+            **/Workshop/**
