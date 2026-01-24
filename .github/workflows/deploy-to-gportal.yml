@@ -14,6 +14,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Network probe (is port reachable?)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y netcat-openbsd
+          echo "Testing TCP connectivity to ${{ secrets.GPORTAL_FTP_HOST }}:34831"
+          nc -vz -w 10 ${{ secrets.GPORTAL_FTP_HOST }} 34831
+
       - name: Quick SFTP connectivity test
         run: |
           sudo apt-get update
