@@ -19,7 +19,7 @@ SandboxVars = {
     -- 2 = Normal
     -- 3 = Low
     -- 4 = None
-    ZombieRespawn = 3,
+    ZombieRespawn = 2,
     -- Zombie allowed to migrate to empty cells.
     ZombieMigrate = true,
     -- Default = 1 Hour, 30 Minutes
