@@ -1,4 +1,4 @@
-name: Deploy to G-Portal (FTP)
+name: Deploy to G-Portal (SFTP)
 
 on:
   workflow_dispatch: {}
@@ -9,9 +9,24 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     environment: GPortalFTP
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Quick SFTP connectivity test
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass openssh-client
+          sshpass -p "${{ secrets.GPORTAL_FTP_PASS }}" \
+            ssh -p 34831 \
+            -o StrictHostKeyChecking=no \
+            -o UserKnownHostsFile=/dev/null \
+            -o ConnectTimeout=20 \
+            -o ServerAliveInterval=15 \
+            -o ServerAliveCountMax=3 \
+            ${{ secrets.GPORTAL_FTP_USER }}@${{ secrets.GPORTAL_FTP_HOST }} \
+            "echo connected && pwd && ls -la /Server && echo '---' && ls -la /Server || true"
 
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.6
@@ -22,14 +37,6 @@ jobs:
           password: ${{ secrets.GPORTAL_FTP_PASS }}
           local_path: "./to-upload/*"
           remote_path: "/Server/"
-          dangerous-clean-slate: false
-          exclude: |
-            **/.git*
-            **/.github/**
-            **/README*
-            **/*.ps1
-            **/Saves/**
-            **/Logs/**
-            **/db/**
-            **/Workshop/**
-
+          delete_remote_files: "false"
+          sftp_only: "true"
+          sftpArgs: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ConnectTimeout=30 -o ServerAliveInterval=15 -o ServerAliveCountMax=3"
