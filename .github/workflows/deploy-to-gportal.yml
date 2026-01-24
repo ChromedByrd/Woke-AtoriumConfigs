@@ -1,24 +1,11 @@
-name: Deploy to G-Portal (FTP)
-
-on:
-  workflow_dispatch: {}
-  push:
-    branches: [ "main" ]
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment: GPortalFTP
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
       - name: FTP Deploy
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           server: ${{ secrets.GPORTAL_FTP_HOST }}
           username: ${{ secrets.GPORTAL_FTP_USER }}
           password: ${{ secrets.GPORTAL_FTP_PASS }}
+          protocol: ftps
+          port: 34831
           local-dir: ./to-upload/
           server-dir: /Server/
           dangerous-clean-slate: false
