@@ -136,11 +136,11 @@ SandboxVars = {
     -- Any food that can rot or spoil. Min: 0.00 Max: 4.00 Default: 0.60
     FoodLootNew = 2.0,
     -- All items that can be read, includes fliers Min: 0.00 Max: 4.00 Default: 0.60
-    LiteratureLootNew = 3.0,
+    LiteratureLootNew = 0.6,
     -- Medicine, bandages and first aid tools. Min: 0.00 Max: 4.00 Default: 0.60
-    MedicalLootNew = 2.0,
+    MedicalLootNew = 1.0,
     -- Fishing Rods, Tents, camping gear etc. Min: 0.00 Max: 4.00 Default: 0.60
-    SurvivalGearsLootNew = 2.0,
+    SurvivalGearsLootNew = 2.5,
     -- Canned and dried food, beverages. Min: 0.00 Max: 4.00 Default: 0.60
     CannedFoodLootNew = 4.0,
     -- Weapons that are not tools in other categories. Min: 0.00 Max: 4.00 Default: 0.60
@@ -152,15 +152,15 @@ SandboxVars = {
     -- Vehicle parts and the tools needed to install them. Min: 0.00 Max: 4.00 Default: 0.60
     MechanicsLootNew = 3.0,
     -- Everything else. Also affects foraging for all items in Town/Road zones. Min: 0.00 Max: 4.00 Default: 0.60
-    OtherLootNew = 1.0,
+    OtherLootNew = 0.6,
     -- All wearable items that are not containers. Min: 0.00 Max: 4.00 Default: 0.60
-    ClothingLootNew = 2.0,
+    ClothingLootNew = 0.6,
     -- Backpacks and other wearable/equippable containers, eg. cases. Min: 0.00 Max: 4.00 Default: 0.60
-    ContainerLootNew = 3.0,
+    ContainerLootNew = 2.0,
     -- Keys for buildings/cars, key rings, and locks. Min: 0.00 Max: 4.00 Default: 0.60
     KeyLootNew = 2.0,
     -- VHS tapes and CDs. Min: 0.00 Max: 4.00 Default: 0.60
-    MediaLootNew = 1.0,
+    MediaLootNew = 2.0,
     -- Spiffo items, plushies, and other collectible keepsake items eg. Photos. Min: 0.00 Max: 4.00 Default: 0.60
     MementoLootNew = 0.6,
     -- Items that are used in cooking, including those (eg. knives) which can be weapons. Does not include food. Includes both usable and unusable items. Min: 0.00 Max: 4.00 Default: 0.60
@@ -266,7 +266,7 @@ SandboxVars = {
     -- Spawn with Chips, a Water Bottle, a Small Backpack, a Baseball Bat, and a Hammer.
     StarterKit = true,
     -- Nutritional value of food affects the player's condition. Turning this off will stop the player gaining or losing weight.
-    Nutrition = false,
+    Nutrition = true,
     -- How fast that food will spoil, inside or outside of a fridge. Default = Normal
     -- 1 = Very Fast
     -- 2 = Fast
@@ -517,14 +517,14 @@ SandboxVars = {
     -- 3 = Normal
     -- 4 = High
     -- 5 = Very High
-    CarGeneralCondition = 2,
+    CarGeneralCondition = 4,
     -- The amount of damage dealt to vehicles that crash. Default = Normal
     -- 1 = Very Low
     -- 2 = Low
     -- 3 = Normal
     -- 4 = High
     -- 5 = Very High
-    CarDamageOnImpact = 3,
+    CarDamageOnImpact = 1,
     -- Damage received by the player from being crashed into. Default = None
     -- 1 = None
     -- 2 = Low
